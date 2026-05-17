@@ -8,10 +8,16 @@ import (
 )
 
 type Transaction struct {
-	ID        uuid.UUID
-	UserID    uuid.UUID
-	Amount    decimal.Decimal
-	Type      string
-	Category  string
-	CreatedAt time.Time
+	ID          uuid.UUID
+	UserID      uuid.UUID
+	Amount      decimal.Decimal
+	Type        string
+	Category    string
+	CreatedAt   time.Time
+	Description string
 }
+
+const (
+	TransactionTypeOut = "OUT"
+	TransactionTypeIn  = "IN"
+)
