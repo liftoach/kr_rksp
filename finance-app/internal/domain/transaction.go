@@ -1,10 +1,15 @@
 package domain
 
-import "time"
+import (
+	"time"
+
+	"github.com/google/uuid"
+	"github.com/shopspring/decimal"
+)
 
 type Transaction struct {
-	ID        uuid.uuid
-	UserID    int64
+	ID        uuid.UUID
+	UserID    uuid.UUID
 	Amount    decimal.Decimal
 	Type      string
 	Category  string
