@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"kr/finance-app/internal/domain"
+	"kr/internal/domain"
 	"time"
 
 	"github.com/google/uuid"

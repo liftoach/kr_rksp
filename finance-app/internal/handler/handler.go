@@ -2,8 +2,8 @@ package handler
 
 import (
 	"context"
-	"kr/finance-app/internal/domain"
-	"kr/finance-app/internal/service"
+	"kr/internal/domain"
+	"kr/internal/service"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"

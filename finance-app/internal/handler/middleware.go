@@ -1,7 +1,7 @@
 package handler
 
 import (
-	auth "kr/finance-app/pkg/jwt"
+	auth "kr/pkg/jwt"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"

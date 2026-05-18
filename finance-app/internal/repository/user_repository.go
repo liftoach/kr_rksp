@@ -5,8 +5,8 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"kr/finance-app/internal/domain"
-	"kr/finance-app/internal/service"
+	"kr/internal/domain"
+	"kr/internal/service"
 	"time"
 
 	"github.com/google/uuid"

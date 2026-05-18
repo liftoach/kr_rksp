@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"kr/finance-app/internal/domain"
+	"kr/internal/domain"
 
 	"github.com/google/uuid"
 )

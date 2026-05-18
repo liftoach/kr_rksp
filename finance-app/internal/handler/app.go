@@ -2,8 +2,8 @@ package handler
 
 import (
 	"context"
-	"kr/finance-app/internal/service"
-	auth "kr/finance-app/pkg/jwt"
+	"kr/internal/service"
+	auth "kr/pkg/jwt"
 
 	"github.com/gofiber/fiber/v2"
 )

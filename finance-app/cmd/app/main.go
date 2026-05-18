@@ -2,19 +2,18 @@ package main
 
 import (
 	"context"
+	"kr/internal/config"
+	"kr/internal/handler"
+	"kr/internal/repository"
+	"kr/internal/service"
+	auth "kr/pkg/jwt"
+	postgres "kr/pkg/pgx"
 	"log"
 	"log/slog"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-
-	"kr/finance-app/internal/config"
-	"kr/finance-app/internal/handler"
-	"kr/finance-app/internal/repository"
-	"kr/finance-app/internal/service"
-	auth "kr/finance-app/pkg/jwt"
-	postgres "kr/finance-app/pkg/pgx"
 )
 
 func main() {

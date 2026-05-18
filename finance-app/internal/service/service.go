@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	"kr/finance-app/internal/domain"
-	auth "kr/finance-app/pkg/jwt"
+	"kr/internal/domain"
+	auth "kr/pkg/jwt"
 
 	"github.com/google/uuid"
 )
