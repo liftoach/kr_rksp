@@ -140,10 +140,7 @@ func (h *Handler) DeleteTransaction(c *fiber.Ctx) error {
 }
 
 func (h *Handler) CreateCategory(c *fiber.Ctx) error {
-	var req struct {
-		Name string `json:"name"`
-		Type string `json:"type"` // IN / OUT
-	}
+	var req CreateCategoryRequest
 
 	if err := c.BodyParser(&req); err != nil {
 		return fiber.ErrBadRequest
@@ -191,11 +188,7 @@ func (h *Handler) DeleteCategory(c *fiber.Ctx) error {
 }
 
 func (h *Handler) CreateBudget(c *fiber.Ctx) error {
-	var req struct {
-		CategoryID uuid.UUID `json:"category_id"`
-		Limit      float64   `json:"limit"`
-		Period     string    `json:"period"`
-	}
+	var req CreateBudgetRequest
 
 	if err := c.BodyParser(&req); err != nil {
 		return fiber.ErrBadRequest

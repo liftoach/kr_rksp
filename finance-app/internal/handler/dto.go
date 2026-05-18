@@ -1,6 +1,9 @@
 package handler
 
-import "github.com/shopspring/decimal"
+import (
+	"github.com/google/uuid"
+	"github.com/shopspring/decimal"
+)
 
 type RegisterRequest struct {
 	Email    string `json:"email" validate:"required,email"`
@@ -21,6 +24,17 @@ type CreateTransactionRequest struct {
 	Type        string          `json:"type"` // IN / OUT
 	Category    string          `json:"category"`
 	Description string          `json:"description"`
+}
+
+type CreateCategoryRequest struct {
+	Name string `json:"name"`
+	Type string `json:"type"` // IN / OUT
+}
+
+type CreateBudgetRequest struct {
+	CategoryID uuid.UUID `json:"category_id"`
+	Limit      float64   `json:"limit"`
+	Period     string    `json:"period"`
 }
 
 type Summary struct {
