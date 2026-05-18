@@ -157,3 +157,29 @@ func (r *UserRepository) Delete(ctx context.Context, id uuid.UUID) error {
 
 	return nil
 }
+
+func (r *UserRepository) GetByEmail(ctx context.Context, email string) (*domain.User, error) {
+	query := `
+		SELECT id, email, password, created_at
+		FROM users
+		WHERE email = $1
+	`
+
+	var u domain.User
+
+	err := r.db.QueryRowContext(ctx, query, email).Scan(
+		&u.ID,
+		&u.Email,
+		&u.Password,
+		&u.CreatedAt,
+	)
+
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return nil, service.ErrNotFound
+		}
+		return nil, fmt.Errorf("run sql query: %w", err)
+	}
+
+	return &u, nil
+}
