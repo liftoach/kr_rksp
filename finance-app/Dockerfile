@@ -7,15 +7,22 @@ RUN go mod download
 
 COPY . .
 
-# 👇 ВАЖНО: указываем папку с main.go
 RUN go build -o main ./cmd/app
+
+RUN go install github.com/pressly/goose/v3/cmd/goose@latest
+
 
 FROM alpine:latest
 
 WORKDIR /app
 
 COPY --from=builder /app/main .
+COPY --from=builder /go/bin/goose ./goose
+COPY --from=builder /app/migrations ./migrations
+COPY docker-entrypoint.sh .
+
+RUN chmod +x docker-entrypoint.sh
 
 EXPOSE 8080
 
-CMD ["./main"]
+CMD ["./docker-entrypoint.sh"]
