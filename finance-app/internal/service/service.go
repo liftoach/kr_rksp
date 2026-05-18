@@ -16,6 +16,22 @@ type Service struct {
 	jwt                   *auth.JWTManager
 }
 
+func NewService(
+	budgetRepository BudgetRepository,
+	categoryRepository CategoryRepository,
+	transactionRepository TransactionRepository,
+	userRepository UserRepository,
+	jwt *auth.JWTManager,
+) *Service {
+	return &Service{
+		BudgetRepository:      budgetRepository,
+		CategoryRepository:    categoryRepository,
+		TransactionRepository: transactionRepository,
+		UserRepository:        userRepository,
+		jwt:                   jwt,
+	}
+}
+
 type BudgetRepository interface {
 	Create(ctx context.Context, b *domain.Budget) error
 
