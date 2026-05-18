@@ -9,8 +9,14 @@ import (
 
 func AuthMiddleware(jwtManager *auth.JWTManager) fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		authHeader := c.Get("Authorization")
 
+		path := c.Path()
+
+		if path == "/auth/login" || path == "/auth/register" {
+			return c.Next()
+		}
+
+		authHeader := c.Get("Authorization")
 		if authHeader == "" {
 			return fiber.ErrUnauthorized
 		}

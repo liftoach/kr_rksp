@@ -46,7 +46,9 @@ func (h *Handler) Register(c *fiber.Ctx) error {
 		return fiber.ErrBadRequest
 	}
 
-	return c.SendStatus(fiber.StatusCreated)
+	return c.Status(201).JSON(fiber.Map{
+		"message": "Created",
+	})
 }
 
 func (h *Handler) Login(c *fiber.Ctx) error {

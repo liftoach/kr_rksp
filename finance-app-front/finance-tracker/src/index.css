@@ -1,0 +1,63 @@
+:root {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f5f5f5;
+  --color-background-tertiary: #fafafa;
+  --color-background-success: #d4edda;
+  --color-background-danger: #f8d7da;
+  --color-background-info: #d1ecf1;
+  
+  --color-text-primary: #212529;
+  --color-text-secondary: #6c757d;
+  --color-text-tertiary: #999;
+  --color-text-success: #155724;
+  --color-text-danger: #721c24;
+  --color-text-info: #0c5460;
+  
+  --color-border-tertiary: rgba(0, 0, 0, 0.15);
+  --color-border-secondary: rgba(0, 0, 0, 0.3);
+  --color-border-primary: rgba(0, 0, 0, 0.4);
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas,
+    'Courier New', monospace;
+  
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: #1e1e1e;
+    --color-background-secondary: #2d2d2d;
+    --color-background-tertiary: #121212;
+    --color-background-success: #1b3a1b;
+    --color-background-danger: #3a1b1b;
+    --color-background-info: #1b2a3a;
+    
+    --color-text-primary: #e8e8e8;
+    --color-text-secondary: #a0a0a0;
+    --color-text-tertiary: #666;
+    --color-text-success: #7cbb00;
+    --color-text-danger: #ff6b6b;
+    --color-text-info: #00bcf2;
+    
+    --color-border-tertiary: rgba(255, 255, 255, 0.15);
+    --color-border-secondary: rgba(255, 255, 255, 0.3);
+    --color-border-primary: rgba(255, 255, 255, 0.4);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-background-tertiary);
+  color: var(--color-text-primary);
+}
