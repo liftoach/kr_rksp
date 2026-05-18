@@ -175,7 +175,7 @@ REACT_APP_API_URL=http://localhost:8080
 ##  Запуск
 
 ```bash
-git clone <repo>
+git clone https://github.com/liftoach/kr_rksp.git
 cd finance-tracker
 docker compose up --build
 ```
