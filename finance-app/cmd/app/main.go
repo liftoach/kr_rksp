@@ -79,7 +79,6 @@ func main() {
 		if err = app.Run(":" + cfg.Port); err != nil {
 			log.Fatalf("server failed: %v", err)
 		}
-		slog.Info("server starting on port %s", cfg.Port)
 	}()
 
 	<-ctx.Done()
