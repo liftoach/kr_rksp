@@ -2,6 +2,8 @@ package service
 
 import (
 	auth "kr/pkg/jwt"
+
+	"github.com/google/uuid"
 )
 
 type Service struct {
@@ -9,7 +11,7 @@ type Service struct {
 	CategoryRepository    CategoryRepository
 	TransactionRepository TransactionRepository
 	UserRepository        UserRepository
-	jwt                   *auth.JWTManager
+	jwt                   JWTGenerator
 }
 
 func NewService(
@@ -26,4 +28,8 @@ func NewService(
 		UserRepository:        userRepository,
 		jwt:                   jwt,
 	}
+}
+
+type JWTGenerator interface {
+	Generate(userID uuid.UUID) (string, error)
 }
